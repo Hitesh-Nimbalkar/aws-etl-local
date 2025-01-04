@@ -1,0 +1,40 @@
+[2025-01-04T11:24:29.408+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-04T11:24:29.423+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline.fetch_data_from_postgres manual__2025-01-04T11:24:27.236404+00:00 [queued]>
+[2025-01-04T11:24:29.430+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline.fetch_data_from_postgres manual__2025-01-04T11:24:27.236404+00:00 [queued]>
+[2025-01-04T11:24:29.430+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-04T11:24:29.452+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): fetch_data_from_postgres> on 2025-01-04 11:24:27.236404+00:00
+[2025-01-04T11:24:29.459+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=91) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-04T11:24:29.461+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline', 'fetch_data_from_postgres', 'manual__2025-01-04T11:24:27.236404+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpw_ga0hfz']
+[2025-01-04T11:24:29.461+0000] {standard_task_runner.py:72} INFO - Started process 93 to run task
+[2025-01-04T11:24:29.462+0000] {standard_task_runner.py:105} INFO - Job 58: Subtask fetch_data_from_postgres
+[2025-01-04T11:24:29.716+0000] {task_command.py:467} INFO - Running <TaskInstance: ml_pipeline.fetch_data_from_postgres manual__2025-01-04T11:24:27.236404+00:00 [running]> on host 50d0e4fac9f5
+[2025-01-04T11:24:29.807+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ml_pipeline' AIRFLOW_CTX_TASK_ID='fetch_data_from_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T11:24:27.236404+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-04T11:24:27.236404+00:00'
+[2025-01-04T11:24:29.808+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-01-04T11:24:29.808+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-01-04T11:24:29.809+0000] {logging_mixin.py:190} INFO - Current task name:fetch_data_from_postgres state:running start_date:2025-01-04 11:24:29.423831+00:00
+[2025-01-04T11:24:29.809+0000] {logging_mixin.py:190} INFO - Dag name:ml_pipeline and current dag run status:running
+[2025-01-04T11:24:29.810+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-04T11:24:29.814+0000] {logging_mixin.py:190} INFO - Data fetched from PostgreSQL:
+[2025-01-04T11:24:29.815+0000] {logging_mixin.py:190} INFO - (1, 'Alice', 30, datetime.datetime(2025, 1, 4, 11, 11, 19, 491341))
+[2025-01-04T11:24:29.815+0000] {logging_mixin.py:190} INFO - (2, 'Bob', 25, datetime.datetime(2025, 1, 4, 11, 11, 19, 491341))
+[2025-01-04T11:24:29.815+0000] {logging_mixin.py:190} INFO - (3, 'Charlie', 35, datetime.datetime(2025, 1, 4, 11, 11, 19, 491341))
+[2025-01-04T11:24:29.816+0000] {logging_mixin.py:190} INFO - (4, 'David', 28, datetime.datetime(2025, 1, 4, 11, 12, 1, 121836))
+[2025-01-04T11:24:29.816+0000] {logging_mixin.py:190} INFO - (5, 'Eve', 32, datetime.datetime(2025, 1, 4, 11, 12, 1, 121836))
+[2025-01-04T11:24:29.816+0000] {logging_mixin.py:190} INFO - (6, 'Frank', 40, datetime.datetime(2025, 1, 4, 11, 12, 1, 121836))
+[2025-01-04T11:24:29.817+0000] {logging_mixin.py:190} INFO - (7, 'Grace', 22, datetime.datetime(2025, 1, 4, 11, 12, 1, 121836))
+[2025-01-04T11:24:29.817+0000] {logging_mixin.py:190} INFO - (8, 'Hank', 27, datetime.datetime(2025, 1, 4, 11, 12, 1, 121836))
+[2025-01-04T11:24:29.818+0000] {logging_mixin.py:190} INFO - Error connecting to PostgreSQL: column "value" does not exist
+LINE 1: SELECT AVG(value) FROM sample_data;
+                   ^
+[2025-01-04T11:24:29.818+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-04T11:24:29.827+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-04T11:24:29.828+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ml_pipeline, task_id=fetch_data_from_postgres, run_id=manual__2025-01-04T11:24:27.236404+00:00, execution_date=20250104T112427, start_date=20250104T112429, end_date=20250104T112429
+[2025-01-04T11:24:29.837+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-01-04T11:24:29.838+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-01-04T11:24:29.838+0000] {logging_mixin.py:190} INFO - Dag name:ml_pipeline queued_at:2025-01-04 11:24:27.248798+00:00
+[2025-01-04T11:24:29.838+0000] {logging_mixin.py:190} INFO - Task hostname:50d0e4fac9f5 operator:PythonOperator
+[2025-01-04T11:24:29.862+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-04T11:24:30.046+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-01-04T11:24:30.064+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
