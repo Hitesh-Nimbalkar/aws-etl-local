@@ -157,8 +157,6 @@ services:
       retries: 5
       start_period: 30s
     restart: always
-    environment:
-      - _PIP_ADDITIONAL_REQUIREMENTS=psycopg2  # Add psycopg2 as a requirement
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:

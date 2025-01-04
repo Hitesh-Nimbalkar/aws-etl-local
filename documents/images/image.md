@@ -1,1 +1,1 @@
-![alt text](db_airflow.png)
+![alt text](image.png)

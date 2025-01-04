@@ -43,4 +43,6 @@ This will display a menu with options to:
 
 ![Database and Airflow Architecture](documents/images/db_airflow.png)
 
+#### Sample Dag - Local Testing 
 
+![Sample Dag](documents/images/airflow_dag.png)
